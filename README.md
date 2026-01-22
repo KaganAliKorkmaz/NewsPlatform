@@ -1,155 +1,185 @@
-# Haber Sitesi Web Uygulaması
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>News Platform – Full-Stack Web Application</title>
+</head>
+<body>
 
-## 📋 Açıklama
+<h1>News Platform – Full-Stack Web Application</h1>
 
-Bu proje, bir web sitesinde dinamik olarak yönetilebilen **Haberler** ve **Duyurular** bölümlerini içerir. Admin paneli üzerinden Haber ve Duyuru ekleme, düzenleme ve silme işlemleri yapılabilir; kullanıcı ekranında ise listelenen Haberler ve Duyurular detaylı bir şekilde görüntülenir.
+<h2>📋 Overview</h2>
+<p>
+This project is a <strong>full-stack web application</strong> developed to practice and demonstrate
+backend and frontend development concepts.
+It provides a dynamic platform where <strong>News</strong> and <strong>Announcements</strong> can be managed
+through an admin panel and displayed to end users in real time.
+</p>
+<p>
+The system focuses on clean architecture, modern web technologies, and real-world patterns such as
+inheritance mapping, real-time updates, and responsive UI design.
+</p>
 
-## 🛠️ Teknolojiler
+<h2>🛠️ Tech Stack</h2>
 
-### Backend
-- **Java 17**
-- **Spring Boot 3.4.5** (Spring Web, Spring Data JPA, Spring WebSocket)
-- **Hibernate / JPA**
-- **MySQL**
-- **Lombok**
-- **Maven**
+<h3>Backend</h3>
+<ul>
+    <li><strong>Java 17</strong></li>
+    <li><strong>Spring Boot 3.4.5</strong>
+        <ul>
+            <li>Spring Web</li>
+            <li>Spring Data JPA</li>
+            <li>Spring WebSocket</li>
+        </ul>
+    </li>
+    <li><strong>Hibernate / JPA</strong></li>
+    <li><strong>MySQL</strong></li>
+    <li><strong>Lombok</strong></li>
+    <li><strong>Maven</strong></li>
+</ul>
 
-### Frontend
-- **React 19**
-- **Vite 6**
-- **Tailwind CSS 4**
-- **Axios**
-- **React Router 7**
-- **WebSocket** (SockJS + STOMP)
+<h3>Frontend</h3>
+<ul>
+    <li><strong>React 19</strong></li>
+    <li><strong>Vite 6</strong></li>
+    <li><strong>Tailwind CSS 4</strong></li>
+    <li><strong>Axios</strong></li>
+    <li><strong>React Router 7</strong></li>
+    <li><strong>WebSocket (SockJS + STOMP)</strong></li>
+</ul>
 
-## ✨ Özellikler
+<h2>✨ Features</h2>
+<ul>
+    <li>
+        News and Announcements are modeled using an abstract
+        <code>Event</code> class and persisted with
+        <strong>Single Table Inheritance</strong>
+    </li>
+    <li>
+        <strong>News</strong>
+        <ul>
+            <li>Title</li>
+            <li>Content</li>
+            <li>Validity date</li>
+            <li>External link</li>
+        </ul>
+    </li>
+    <li>
+        <strong>Announcements</strong>
+        <ul>
+            <li>Title</li>
+            <li>Content</li>
+            <li>Validity date</li>
+            <li>Image upload (file system based)</li>
+        </ul>
+    </li>
+    <li><strong>Admin Panel:</strong> Create, update, and delete News and Announcements</li>
+    <li>
+        <strong>User Interface:</strong>
+        <ul>
+            <li>List view with search and sorting</li>
+            <li>Popup-based detailed content display</li>
+        </ul>
+    </li>
+    <li>
+        <strong>Real-Time Updates:</strong>
+        New announcements are pushed instantly to all connected clients via WebSocket
+    </li>
+    <li><strong>Responsive Design:</strong> Mobile, tablet, and desktop compatible</li>
+</ul>
 
-- **Haberler ve Duyurular** tek bir `Etkinlik` abstract sınıfından extend edilerek **Single Table Inheritance** ile tek tabloda saklanır
-- **Haberler** için: başlık, içerik, geçerlilik tarihi, link
-- **Duyurular** için: başlık, içerik, geçerlilik tarihi, resim (dosya sistemi)
-- **Admin ekranı:** Haberler ve Duyurular için CRUD işlemleri
-- **Kullanıcı ekranı:** Listeleme, popup ile detay gösterimi, arama ve sıralama
-- **WebSocket** ile yeni duyurular anlık olarak tüm kullanıcı ekranlarına iletilir
-- **Responsive Design:** Mobil, tablet ve desktop uyumlu
+<h2>📦 Requirements</h2>
+<ul>
+    <li>Java 17+</li>
+    <li>Maven 3.6+</li>
+    <li>Node.js 18+ and npm 8+</li>
+    <li>MySQL database</li>
+</ul>
 
-## 📦 Gereksinimler
+<h2>🚀 Setup &amp; Run</h2>
 
-- Java 17 veya üstü
-- Maven 3.6+ 
-- Node.js 18+ ve npm 8+
-- MySQL veritabanı
-
-## 🚀 Kurulum ve Çalıştırma
-
-### 1. Veritabanı Ayarları
-
-MySQL'de `projedb` veritabanını oluşturun:
-
-```sql
+<h3>1. Database Configuration</h3>
+<pre>
 CREATE DATABASE projedb;
 CREATE USER 'springuser'@'localhost' IDENTIFIED BY 'springpass';
 GRANT ALL PRIVILEGES ON projedb.* TO 'springuser'@'localhost';
 FLUSH PRIVILEGES;
-```
+</pre>
 
-Backend konfigürasyonu: `backend/src/main/resources/application.properties`
+<p>
+Update backend configuration in
+<code>backend/src/main/resources/application.properties</code>:
+</p>
 
-```properties
-spring.datasource.url=jdbc:mysql://127.0.0.1:3306/projedb?...
+<pre>
+spring.datasource.url=jdbc:mysql://127.0.0.1:3306/projedb
 spring.datasource.username=springuser
 spring.datasource.password=springpass
-```
+</pre>
 
-### 2. Backend
-
-```bash
+<h3>2. Backend</h3>
+<pre>
 cd backend
 mvn clean install
 mvn spring-boot:run
-```
+</pre>
 
-Backend `http://localhost:8082` adresinde çalışacaktır.
+<p>Backend runs on <code>http://localhost:8082</code></p>
 
-### 3. Frontend
-
-```bash
+<h3>3. Frontend</h3>
+<pre>
 cd frontend
 npm install
 npm run dev
-```
+</pre>
 
-Frontend `http://localhost:5173` adresinde çalışacaktır.
+<p>Frontend runs on <code>http://localhost:5173</code></p>
 
-## 🎯 Kullanım
+<h2>🎯 Usage</h2>
 
-### Yönetici Hesabı
+<h3>Admin Account</h3>
+<ul>
+    <li><strong>Username:</strong> admin123</li>
+    <li><strong>Password:</strong> 123456</li>
+</ul>
 
-Admin panelini kullanabilmek için önce kayıt olup ardından giriş yapmanız gerekmektedir:
+<h3>URLs</h3>
+<ul>
+    <li><code>http://localhost:5173/</code> – User Interface</li>
+    <li><code>http://localhost:5173/admin</code> – Admin Panel</li>
+    <li><code>http://localhost:8082</code> – Backend API</li>
+</ul>
 
-- **Kullanıcı adı:** `admin123`
-- **Şifre:** `123456`
+<h2>📚 Documentation</h2>
+<ul>
+    <li><strong>Backend Notes:</strong> backend/HELP.md</li>
+    <li><strong>Frontend Notes:</strong> frontend/README.md</li>
+</ul>
 
-### Erişim URL'leri
+<h2>⚠️ Known Limitations &amp; Improvements</h2>
+<ul>
+    <li>Passwords are stored without encryption</li>
+    <li>Authentication is basic and not production-ready</li>
+    <li>WebSocket support is limited to announcements</li>
+    <li>UI/UX improvements planned</li>
+    <li>Spring Security &amp; JWT integration</li>
+</ul>
 
-- `http://localhost:5173/` - Kullanıcı arayüzü (Vite sunucusu)
-- `http://localhost:5173/admin` - Admin paneli
-- `http://localhost:8082` - Backend API
+<h2>🔒 Security Disclaimer</h2>
+<p>
+<strong>This project is NOT intended for production use.</strong><br>
+Passwords are stored in plain text, JWT is not implemented,
+and CORS configuration is permissive.
+</p>
 
-## 📚 Detaylı Dokümantasyon
+<h2>📝 License</h2>
+<p>This project was developed for educational purposes.</p>
 
-- **[Backend Geliştirici Notları](./backend/HELP.md)** - API endpoints, veritabanı yapısı, konfigürasyon
-- **[Frontend Geliştirici Notları](./frontend/README.md)** - Proje yapısı, teknolojiler, özellikler
+<h2>👤 Author</h2>
+<p>
+Developed as a personal full-stack learning project to explore
+modern web technologies, backend architecture, and real-time communication.
+</p>
 
-## 🔧 Proje Yapısı
-
-```
-HaberSitesi/
-├── backend/               # Spring Boot backend
-│   ├── src/
-│   │   └── main/
-│   │       ├── java/     # Java kaynak kodları
-│   │       └── resources/ # Konfigürasyon dosyaları
-│   ├── pom.xml           # Maven bağımlılıkları
-│   └── HELP.md           # Backend dokümantasyonu
-├── frontend/              # React frontend
-│   ├── src/
-│   │   ├── pages/        # Sayfa bileşenleri
-│   │   ├── components/   # Yeniden kullanılabilir bileşenler
-│   │   ├── App.jsx       # Ana uygulama
-│   │   └── main.jsx      # Giriş noktası
-│   ├── package.json      # NPM bağımlılıkları
-│   └── README.md         # Frontend dokümantasyonu
-└── README.md             # Ana dokümantasyon
-```
-
-## ⚠️ Bilinen Eksiklikler ve Yapılacaklar
-
-- **Şifreleme yöntemleri** henüz eklenmedi, kullanıcı doğrulama ve veri şifreleme işlemleri uygulanmalı
-- **WebSocket** tasarımı yalnızca duyurulara uygulanmış durumda; tüm gerçek zamanlı işlemler (Haber ekleme, silme vb.) için genişletilebilir
-- Kullanıcı arayüzü daha **kullanışlı** ve **erişilebilir** olacak şekilde iyileştirilmeli
-- **Spring Security** entegrasyonu
-- **JWT** token tabanlı authentication
-
-## 🔒 Güvenlik Notları
-
-⚠️ **BU PROJE ÜRETIM ORTAMI İÇİN TASARLANMAMIŞTIR!**
-
-- Şifreler plain text olarak saklanır
-- JWT/Spring Security kullanılmaz
-- Sadece role-based basit auth var
-- CORS tüm header'lara açık
-
-## 📝 Lisans
-
-Bu proje eğitim amaçlı geliştirilmiştir.
-
-## 👤 Yazar
-
-Bu proje eğitim/öğretim amaçlı geliştirilmiştir.
-
-## 📖 Referanslar
-
-- [Spring Boot Dokümantasyonu](https://spring.io/projects/spring-boot)
-- [React Dokümantasyonu](https://react.dev)
-- [Tailwind CSS Dokümantasyonu](https://tailwindcss.com)
-- [MySQL Dokümantasyonu](https://dev.mysql.com/doc/)
+</body>
+</html>
