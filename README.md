@@ -1,10 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>News Platform – Full-Stack Web Application</title>
-</head>
-<body>
 
 <h1>News Platform – Full-Stack Web Application</h1>
 
