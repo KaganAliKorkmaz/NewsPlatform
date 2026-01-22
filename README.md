@@ -1,7 +1,7 @@
 
 <h1>News Platform – Full-Stack Web Application</h1>
 
-<h2>📋 Overview</h2>
+<h2> Overview</h2>
 <p>
 This project is a <strong>full-stack web application</strong> developed to practice and demonstrate
 backend and frontend development concepts.
@@ -13,7 +13,7 @@ The system focuses on clean architecture, modern web technologies, and real-worl
 inheritance mapping, real-time updates, and responsive UI design.
 </p>
 
-<h2>🛠️ Tech Stack</h2>
+<h2> Tech Stack</h2>
 
 <h3>Backend</h3>
 <ul>
@@ -41,7 +41,7 @@ inheritance mapping, real-time updates, and responsive UI design.
     <li><strong>WebSocket (SockJS + STOMP)</strong></li>
 </ul>
 
-<h2>✨ Features</h2>
+<h2> Features</h2>
 <ul>
     <li>
         News and Announcements are modeled using an abstract
@@ -81,7 +81,7 @@ inheritance mapping, real-time updates, and responsive UI design.
     <li><strong>Responsive Design:</strong> Mobile, tablet, and desktop compatible</li>
 </ul>
 
-<h2>📦 Requirements</h2>
+<h2> Requirements</h2>
 <ul>
     <li>Java 17+</li>
     <li>Maven 3.6+</li>
@@ -89,7 +89,7 @@ inheritance mapping, real-time updates, and responsive UI design.
     <li>MySQL database</li>
 </ul>
 
-<h2>🚀 Setup &amp; Run</h2>
+<h2> Setup &amp; Run</h2>
 
 <h3>1. Database Configuration</h3>
 <pre>
@@ -128,7 +128,7 @@ npm run dev
 
 <p>Frontend runs on <code>http://localhost:5173</code></p>
 
-<h2>🎯 Usage</h2>
+<h2> Usage</h2>
 
 <h3>Admin Account</h3>
 <ul>
@@ -143,7 +143,7 @@ npm run dev
     <li><code>http://localhost:8082</code> – Backend API</li>
 </ul>
 
-<h2>📚 Documentation</h2>
+<h2> Documentation</h2>
 <ul>
     <li><strong>Backend Notes:</strong> backend/HELP.md</li>
     <li><strong>Frontend Notes:</strong> frontend/README.md</li>
