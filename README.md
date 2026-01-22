@@ -156,30 +156,6 @@ npm run dev
     <li><strong>Frontend Notes:</strong> frontend/README.md</li>
 </ul>
 
-<h2>⚠️ Known Limitations &amp; Improvements</h2>
-<ul>
-    <li>Passwords are stored without encryption</li>
-    <li>Authentication is basic and not production-ready</li>
-    <li>WebSocket support is limited to announcements</li>
-    <li>UI/UX improvements planned</li>
-    <li>Spring Security &amp; JWT integration</li>
-</ul>
-
-<h2>🔒 Security Disclaimer</h2>
-<p>
-<strong>This project is NOT intended for production use.</strong><br>
-Passwords are stored in plain text, JWT is not implemented,
-and CORS configuration is permissive.
-</p>
-
-<h2>📝 License</h2>
-<p>This project was developed for educational purposes.</p>
-
-<h2>👤 Author</h2>
-<p>
-Developed as a personal full-stack learning project to explore
-modern web technologies, backend architecture, and real-time communication.
-</p>
 
 </body>
 </html>
